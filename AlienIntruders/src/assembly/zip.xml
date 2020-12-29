@@ -1,0 +1,49 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>zip</id>
+    <includeBaseDirectory>true</includeBaseDirectory>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/logging</directory>
+            <includes>
+                <include>**/*.properties</include>
+            </includes>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/startup</directory>
+            <includes>
+                <include>**/*.sh</include>
+                <include>**/*.bat</include>
+            </includes>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <!-- To include a JDK or JRE distribution in the ZIP
+        <fileSet>
+            <directory>${project.basedir}/zulu11.43.55-ca-jdk11.0.9.1-linux_x64</directory>
+            <outputDirectory>/jdk</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet> -->
+    </fileSets>
+    <files>
+        <file>
+            <source> ${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+    </files>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <excludes>
+                <exclude>${project.groupId}:${project.artifactId}:jar:*</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>
