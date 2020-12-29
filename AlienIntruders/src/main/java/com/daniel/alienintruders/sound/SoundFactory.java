@@ -18,7 +18,7 @@ package com.daniel.alienintruders.sound;
 import java.io.BufferedInputStream;
 
 /**
- * Creates File objects for audio used in the game.
+ * Creates input streams for audio used in the game.
  *
  * @author Bryan Daniel
  */
