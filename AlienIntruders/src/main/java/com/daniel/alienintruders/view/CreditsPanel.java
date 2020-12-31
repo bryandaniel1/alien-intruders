@@ -135,7 +135,7 @@ public class CreditsPanel extends JPanel implements ActionListener {
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridheight = 4;
-        constraints.weighty = 0.5;
+        constraints.weighty = 0.8;
         constraints.insets = new Insets(10, 20, 10, 20);  //top, left, bottom, right
         creditsPanel.add(scrollPane, constraints);
 
@@ -148,7 +148,7 @@ public class CreditsPanel extends JPanel implements ActionListener {
         constraints.gridx = 0;
         constraints.gridy = 4;
         constraints.gridheight = 1;
-        constraints.weighty = 0.5;
+        constraints.weighty = 0.2;
         constraints.insets = new Insets(10, 20, 65, 20);  //top, left, bottom, right
         constraints.anchor = GridBagConstraints.SOUTH;
         creditsPanel.add(closeButtonPanel, constraints);
